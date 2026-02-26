@@ -1,11 +1,11 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c11
-TARGET = mess
+CFLAGS = -Wall -Wextra -std=c11 -Iinclude
+TARGET = tensor
 
-all: $(TARGET)
+SRC = src/main.c src/matriz.c
 
-$(TARGET): mess.c
-	$(CC) $(CFLAGS) mess.c -o $(TARGET)
+all:
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
 clean:
-	del /Q $(TARGET).exe 2>nul || rm -f $(TARGET)
+	rm -f $(TARGET).exe
