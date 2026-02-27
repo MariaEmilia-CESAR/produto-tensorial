@@ -8,4 +8,4 @@ all:
 	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
 clean:
-	rm -f $(TARGET).exe
+	rm -f $(TARGET) $(TARGET).exe
