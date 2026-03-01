@@ -34,14 +34,14 @@ Cada arquivo deve conter apenas números separados por espaço, organizados em f
 
 Exemplo de matriz 2x2:
 
-1 2
-3 4  
+- 1 2
+- 3 4  
 
 Exemplo de matriz 3x3:
 
-1 2 3
-4 5 6
-7 8 9   
+- 1 2 3
+- 4 5 6
+- 7 8 9   
 
 As matrizes devem ser **quadradas (2x2 ou 3x3)**.
 
