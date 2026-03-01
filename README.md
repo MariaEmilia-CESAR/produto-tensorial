@@ -112,10 +112,10 @@ Para executar a verificação:
 
 Trecho do relatório:
 
-HEAP SUMMARY:
-in use at exit: 0 bytes in 0 blocksAll heap blocks
-were freed -- no leaks are possible
-ERROR SUMMARY: 0 errors from 0 contexts   `
+- HEAP SUMMARY:
+- in use at exit: 0 bytes in 0 blocksAll heap blocks
+- were freed -- no leaks are possible
+- ERROR SUMMARY: 0 errors from 0 contexts
 
 Isso confirma que toda a memória alocada dinamicamente é corretamente liberada.
 
