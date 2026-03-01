@@ -32,12 +32,12 @@ Formato dos Arquivos de Entrada
 
 Cada arquivo deve conter apenas números separados por espaço, organizados em formato de matriz.
 
-### Exemplo de matriz 2x2
+Exemplo de matriz 2x2:
 
 1 2
 3 4  
 
-### Exemplo de matriz 3x3
+Exemplo de matriz 3x3:
 
 1 2 3
 4 5 6
@@ -68,7 +68,6 @@ Então o resultado **A ⊗ B** terá dimensão:
 O cálculo consiste em multiplicar cada elemento da matriz A por todos os elementos da matriz B, formando uma matriz maior organizada em blocos.
 
 Estrutura do Projeto
---------------------
 
 - include/matriz.h   → definição da struct Matriz e protótipos
 - src/main.c         → controle principal do programa
