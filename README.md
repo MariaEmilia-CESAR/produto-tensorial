@@ -1,20 +1,23 @@
-**Produto Tensorial em C**
+Produto Tensorial em C
+======================
 
-Este projeto implementa o Produto Tensorial entre duas matrizes 2x2 ou 3x3 utilizando alocação dinâmica de memória na linguagem C.
+Este projeto implementa o **Produto Tensorial** entre duas matrizes 2x2 ou 3x3 utilizando alocação dinâmica de memória na linguagem C.
 
 O programa recebe dois arquivos .txt como entrada, cada um contendo uma matriz, calcula o produto tensorial entre elas e gera automaticamente um arquivo de saída com o resultado.
 
 O desenvolvimento foi feito com foco em:
 
-*   Alocação dinâmica de memória
+*   ✅ Alocação dinâmica de memória
     
-*   Modularização do código
+*   ✅ Modularização do código
     
-*   Manipulação de arquivos
+*   ✅ Manipulação de arquivos
     
-*   Tratamento de erros
+*   ✅ Tratamento de erros
     
-*   Liberação correta de memória (sem vazamentos)
+*   ✅ Liberação correta de memória (sem vazamentos)
+    
+*   ✅ Validação com ferramenta de análise de memória
     
 
 Funcionamento do Programa
@@ -22,32 +25,32 @@ Funcionamento do Programa
 
 O programa deve ser executado passando exatamente dois arquivos como argumento na linha de comando:
 
-./tensor teste/A.txt teste/B.txt
+`./tensor teste/A.txt teste/B.txt`
 
 Formato dos Arquivos de Entrada
 -------------------------------
 
 Cada arquivo deve conter apenas números separados por espaço, organizados em formato de matriz.
 
-Exemplo de matriz 2x2:
+### Exemplo de matriz 2x2
 
-1 2
-3 4
+`   1 2
+    3 4   `
 
-Exemplo de matriz 3x3:
+### Exemplo de matriz 3x3
 
-1 2 3
-4 5 6
-7 8 9
+`   1 2 3
+    4 5 6
+    7 8 9   `
 
-As matrizes devem ser quadradas (2x2 ou 3x3).
+As matrizes devem ser **quadradas (2x2 ou 3x3)**.
 
 Arquivo de Saída
 ----------------
 
 Após a execução, o programa gera automaticamente o arquivo:
 
-tensor\_mess.out
+`   tensor_mess.out   `
 
 Esse arquivo contém o resultado do produto tensorial entre as duas matrizes fornecidas.
 
@@ -56,41 +59,65 @@ Conceito Matemático
 
 O Produto Tensorial entre duas matrizes A e B é definido da seguinte forma:
 
-Se A possui dimensão m × ne B possui dimensão p × q
+Se A possui dimensão **m × n** e B possui dimensão **p × q**
 
-Então o resultado A ⊗ B terá dimensão:
+Então o resultado **A ⊗ B** terá dimensão:
 
-(m · p) × (n · q)
+`   (m · p) × (n · q)   `
 
 O cálculo consiste em multiplicar cada elemento da matriz A por todos os elementos da matriz B, formando uma matriz maior organizada em blocos.
 
 Estrutura do Projeto
 --------------------
 
-O projeto está organizado em múltiplos arquivos:
-
-include/matriz.h → definição da estrutura Matriz e protótipos das funções
-src/main.c → controle principal do programa
-src/matriz.c → implementação das funções de manipulação de matrizes
-teste/ → arquivos de exemplo
-Makefile → automatiza a compilação
+`   include/matriz.h   → definição da struct Matriz e protótipos
+    src/main.c         → controle principal do programa
+    src/matriz.c       → implementação das funções de matrizes
+    teste/             → arquivos de exemplo
+    Makefile           → automatiza a compilação   `
 
 Compilação
 ----------
 
-O projeto utiliza Makefile.
+O projeto utiliza **Makefile**.
 
 Para compilar:
 
-make
+`   make   `
 
 Para limpar arquivos compilados:
 
-make clean
+`   make clean   `
 
 O executável gerado será chamado:
 
-tensor
+`   tensor   `
+
+Validação com Valgrind
+----------------------
+
+O programa foi validado utilizando a ferramenta **Valgrind**, responsável por detectar vazamentos de memória e acessos inválidos.
+
+Para executar a verificação:
+
+`   valgrind --leak-check=full ./tensor teste/A.txt teste/B.txt   `
+
+### Resultado obtido:
+
+*   0 bytes em uso ao final da execução
+    
+*   0 vazamentos de memória
+    
+*   0 erros detectados
+    
+
+Trecho do relatório:
+`   HEAP SUMMARY:
+    in use at exit: 0 bytes in 0 blocksAll heap blocks
+    were freed -- no leaks are possible
+    ERROR SUMMARY: 0 errors from 0 contexts   `
+
+Isso confirma que toda a memória alocada dinamicamente é corretamente liberada.
 
 Tratamento de Erros
 -------------------
@@ -106,14 +133,23 @@ O programa realiza verificação para:
 *   Falha de alocação dinâmica
     
 
-Caso ocorra algum erro, uma mensagem apropriada é exibida no terminal.
+Caso ocorra algum erro, uma mensagem apropriada é exibida no terminal e o programa é encerrado com segurança.
 
 Gerenciamento de Memória
 ------------------------
 
 Toda a memória utilizada é alocada dinamicamente com malloc e liberada com free.
 
-A função responsável por liberar a estrutura da matriz garante que não ocorram vazamentos de memória.
+A função responsável por liberar a estrutura da matriz garante que:
+
+*   Cada linha alocada seja liberada
+    
+*   O vetor de ponteiros seja liberado
+    
+*   A estrutura principal seja liberada
+    
+
+A validação com Valgrind confirmou a ausência de vazamentos.
 
 Tecnologias Utilizadas
 ----------------------
@@ -124,9 +160,13 @@ Tecnologias Utilizadas
     
 *   Makefile
     
+*   Valgrind
+    
 *   Git
     
 *   GitHub
+    
+*   WSL (Windows Subsystem for Linux) para testes em ambiente Linux
     
 
 Contexto Acadêmico
@@ -143,3 +183,5 @@ Projeto desenvolvido para aplicação prática dos seguintes conceitos:
 *   Manipulação de arquivos
     
 *   Organização modular em C
+    
+*   Testes de memória em ambiente Linux
