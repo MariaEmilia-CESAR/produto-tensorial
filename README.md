@@ -34,14 +34,14 @@ Cada arquivo deve conter apenas números separados por espaço, organizados em f
 
 ### Exemplo de matriz 2x2
 
-`   1 2
-    3 4   `
+1 2
+3 4  
 
 ### Exemplo de matriz 3x3
 
-`   1 2 3
-    4 5 6
-    7 8 9   `
+1 2 3
+4 5 6
+7 8 9   
 
 As matrizes devem ser **quadradas (2x2 ou 3x3)**.
 
@@ -70,11 +70,11 @@ O cálculo consiste em multiplicar cada elemento da matriz A por todos os elemen
 Estrutura do Projeto
 --------------------
 
-`   include/matriz.h   → definição da struct Matriz e protótipos
-    src/main.c         → controle principal do programa
-    src/matriz.c       → implementação das funções de matrizes
-    teste/             → arquivos de exemplo
-    Makefile           → automatiza a compilação   `
+- include/matriz.h   → definição da struct Matriz e protótipos
+- src/main.c         → controle principal do programa
+- src/matriz.c       → implementação das funções de matrizes
+- teste/             → arquivos de exemplo
+- Makefile           → automatiza a compilação
 
 Compilação
 ----------
@@ -112,10 +112,11 @@ Para executar a verificação:
     
 
 Trecho do relatório:
-`   HEAP SUMMARY:
-    in use at exit: 0 bytes in 0 blocksAll heap blocks
-    were freed -- no leaks are possible
-    ERROR SUMMARY: 0 errors from 0 contexts   `
+
+HEAP SUMMARY:
+in use at exit: 0 bytes in 0 blocksAll heap blocks
+were freed -- no leaks are possible
+ERROR SUMMARY: 0 errors from 0 contexts   `
 
 Isso confirma que toda a memória alocada dinamicamente é corretamente liberada.
 
